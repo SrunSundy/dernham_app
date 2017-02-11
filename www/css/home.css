@@ -1,0 +1,29 @@
+.blue-text{
+	color: #3B5999 !important;
+}
+
+.black-text{
+	color: black;
+}
+
+div.product-box {
+	width:50%;
+	float:left;
+}
+
+div.product-box:nth-child(odd){
+	padding-left: 8px;
+	padding-right: 5px;
+}
+
+div.product-box:nth-child(even){
+	padding-right: 8px;
+	padding-left: 5px;
+}
+
+p.product-content{
+	font-size:11px;
+	text-justify:left;
+	color:#807d7d
+}
+

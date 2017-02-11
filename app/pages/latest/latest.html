@@ -1,0 +1,42 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>{{title_food}}</ion-title>
+    <ion-buttons start>
+    <button (click)="dismiss()">
+        <ion-icon name="md-close"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  class="login">
+
+<ion-list>
+
+  <ion-item *ngFor = "let item of page_item" class="latest-ion-item" (click)="sortedList(item.item_no, item.item_name)" no-lines>
+    <ion-icon name={{item.item_icon}} [style.color]="item.item_color" style="font-size:25px"></ion-icon><span class="latest-button-item" [ngClass]="(selectedType == item.item_no ) ? 'blue-text':'black-text'">{{ item.item_name }}</span>
+    <ion-icon *ngIf="selectedType == item.item_no" [class.checkbox-active]="selectedType == item.item_no " style="font-size:35px;" facebook item-right name="ios-checkmark"></ion-icon>
+  </ion-item>
+ <!--  <ion-item class="latest-ion-item" (click)="sortedList(1, button_nearby)">
+    <ion-icon name="md-pin" style="color:#507dbc;font-size:25px"></ion-icon><span class="latest-button-item">{{button_nearby}}</span>
+    <ion-icon *ngIf="selectedType == 1" [class.checkbox-active]="selectedType == 1 " style="font-size:35px;" facebook item-right name="ios-checkmark"></ion-icon>
+  </ion-item>
+  <ion-item class="latest-ion-item" no-lines (click)="sortedList(2, button_topshop)">
+    <ion-icon name="md-restaurant" style="color:#f21b3f;font-size:25px"></ion-icon><span class="latest-button-item">{{button_topshop}}</span>
+    <ion-icon *ngIf="selectedType == 2" [class.checkbox-active]="selectedType == 2 " style="font-size:35px;" facebook item-right name="ios-checkmark"></ion-icon>
+  </ion-item> -->
+  
+  
+
+
+</ion-list>
+
+
+
+</ion-content>

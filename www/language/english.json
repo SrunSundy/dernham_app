@@ -1,0 +1,94 @@
+[
+  	{
+  		"LoginPage" : {
+  				"facebook": "Login via Facebook",
+  				"pl_username": "Email or username",
+  				"pl_password": "Password",
+  				"submit":"Login",
+				 "lb_or": "Or",
+				 "title":"Login",
+				 "button_register":"Register",
+  				"forgotPassword":"Forgot password?"
+  		},
+
+      "HomePage": {
+          "tap_shop" : "Shop",
+          "tap_food" : "Food",
+          "head_latest" : "Latest",
+          "head_category" : "Category",
+          "head_location" : "Phnom Penh",
+          "button_nearby" : "Nearby",
+          "button_ecoupon" : "E-Coupon",
+          "button_topshop" : "Top Shops",
+          "button_topmember" : "Top Members",
+          "button_event" : "Events",
+          "button_game" : "Game",
+          "sheet_title" : "Shop", 
+          "sheet_review" : "Review",
+          "sheet_save" : "Save",
+          "sheet_share" : "Share",
+          "sheet_report" : "Report",
+          "sheet_turnoff" : "Turn off notifiacation",
+          "sheet_cancel" : "Cancel",
+          "title_food" : "Food",
+          "title_shop" : "Shop",
+          "title_location" : "Location"
+
+      },
+
+      "DetailPage": {
+          "head_photo" : "Photo",
+          "head_checkin" : "Check in",
+          "head_save" : "Save",
+          "head_share" : "Share",
+          "lb_photo" : "Photo",
+          "lb_checkin" : "Checked in",
+          "lb_save" : "Saved",
+          "lb_working_hour" : "Working hour",
+          "other_menu" : "Other menu",
+          "view_info" : "View info",
+          "popular_food" : "Popular food",
+          "view_more" : "View more"    
+      },
+
+      "IntroPage": {
+          "lb_language" : "Languages",
+          "head_2slide" : "WELCOME TO DERNHAM",
+          "head_3slide" : "FEATURES",
+          "info_2slide" : "Dernham is an app...",
+          "info_3slide" : "Please enjoy our features...",
+          "opt_en" : "EN",
+          "opt_kh" : "KH",
+          "button_cancel" : "Cancel",
+          "button_ok" : "OK"       
+
+      },
+
+      "ForgetPwdPage": {
+          "title_forgetpwd" : "Forget Password",
+          "pl_enter_email" : "Please enter your email",
+          "button_search" : "Search"      
+      },
+
+      "SignupPage": {
+          "title" : "Sign Up",
+          "pl_name" : "please enter your fullname",
+          "pl_email" : "please enter email",
+          "pl_pwd" : "please enter password",
+          "pl_repwd" : "please confirm password",
+          "button_signup" : "Sign up"
+      },
+
+      "ShopImagePage":{
+          "title":"Images"
+          
+      },
+
+      "ShopProductPage":{
+          "title":"Products"
+          
+      }
+
+
+  	}
+]

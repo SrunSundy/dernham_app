@@ -1,0 +1,40 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content padding class="login" style="background-image:url('img/login.jpg');background-repeat: no-repeat;background-size: 100% 100%">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col width-33></ion-col>
+      <ion-col width-33 style="margin-left: auto;margin-right: auto;display: block;">
+        <img src="img/logo.png" style="width:100%;height:auto">
+      </ion-col>
+      <ion-col width-33></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list class="list-form" style="margin-top:30px">
+    <ion-item class="margin-top" style="background:none;border-bottom:1px solid white;box-shadow:none;">
+      <ion-input style="color:white;border-bottom-color:white;box-shadow:none;" type="text" placeholder="{{pl_username}}"></ion-input>
+    </ion-item>
+
+    <ion-item class="margin-top" style="background:none;border-bottom:1px solid white;box-shadow:none;">
+      <ion-input style="color:white;border-bottom-color:white;box-shadow:none;" type="password" placeholder="{{pl_password}}"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button  primary block tappable (click)="login()">{{submit}}</button>
+
+  <div text-center class="margin-top-20 light">{{lb_or}}</div>
+
+  <button facebook block class="margin-top-20">{{facebook}}</button>
+
+  <div text-center class="margin-top-20 light" tappable (click)="forgotPwd()">{{forgotpassword}}</div>
+  <button style="background-color: transparent;color:white;border-color:white;border:1px solid white;" class="margin-top-20"  block tappable (click)="signUp()">{{button_register}}</button>
+</ion-content>

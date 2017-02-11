@@ -1,0 +1,52 @@
+.home {
+
+  ion-slides {
+  	margin-top: 10px;
+    height: 110px;
+    margin-bottom: 3px;
+  }
+
+  .card {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3)
+  }
+
+  .button-fab {
+    bottom: 60px;
+  }
+  ion-tabs {
+	height: 35px;
+  }
+  
+}
+.toolbar-background {
+	border-style: none;
+}
+.tab-button.has-title-only .tab-button-text {
+	font-size : 12px;
+}
+
+.me-subheader {
+  color : black;
+}
+.hide {
+  display:none;
+}
+.show {
+  display:inline-block;
+}
+.item .item-inner {
+  padding-right: 8px;
+  border-bottom: none;
+
+}
+ion-list .item .item-inner {
+   border-bottom: none;
+}
+.facilities{
+  position:relative;
+  top:9px;
+  left:-10px;
+}
+
+
+

@@ -1,0 +1,95 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content class="intro" >
+  <ion-slides #mySlider>
+    <ion-slide style="background-image:url('img/1slide.jpg');background-repeat: no-repeat;background-size:100% 100%;padding:25px">
+
+        <ion-col width-100>
+          <ion-list class="list-form" style="margin-top: -250px;">
+              <ion-item style="background-color:transparent; border-bottom:1px solid white;">
+                <ion-label style="color:white">{{lb_language}}</ion-label>
+                <ion-select okText="{{button_ok}}" cancelText="{{button_cancel}}"  [(ngModel)]="languages"(ionChange)="getLanguage(languages)">
+                  <ion-option value="kh">{{opt_kh}}</ion-option>
+                  <ion-option value="en" selected>{{opt_en}}</ion-option>
+                </ion-select>
+              </ion-item>
+          </ion-list>             
+        </ion-col>
+        
+        <ion-row style="color:white;font-size:30px;">
+         
+            <ion-col width-20 style="text-align: left;">
+              
+            </ion-col>
+          
+            <ion-col width-60>
+            </ion-col>
+        
+            <ion-col width-20 style="text-align: right;">
+              <ion-icon name="ios-arrow-forward" (click)="nextSilde(1)"></ion-icon>
+            </ion-col>
+          
+        </ion-row>
+        
+    </ion-slide>
+    <ion-slide style="background-image:url('img/2slide.jpg');background-repeat: no-repeat;background-size:100% 100%;padding:25px">
+      
+        <ion-col width-100>
+            <h5 style="color: white;margin-top: -250px;">
+              {{head_2slide}}
+            </h5>        
+        </ion-col>
+
+        <ion-row style="color:white;font-size:30px;">
+         
+            <ion-col width-20 style="text-align: left;">
+              <ion-icon name="ios-arrow-back" (click)="nextSilde(0)"></ion-icon>
+            </ion-col>
+
+            <ion-col width-60>
+            </ion-col>
+
+            <ion-col width-20 style="text-align: right;">
+              <ion-icon name="ios-arrow-forward" (click)="nextSilde(2)"></ion-icon>
+            </ion-col>          
+        </ion-row>
+
+    </ion-slide>
+    <ion-slide style="background-image:url('img/3slide.jpg');background-repeat: no-repeat;background-size:100% 100%;padding:25px">
+
+        <ion-col width-100>
+          <h5 style="color: white;margin-top: -250px;">
+            {{head_3slide}}
+          </h5>
+        </ion-col>
+        
+      <ion-row style="color:white;font-size:30px;">
+         
+            <ion-col width-20 style="text-align: left;">
+              <ion-icon name="ios-arrow-back" (click)="nextSilde(1)"></ion-icon>
+            </ion-col>
+
+            <ion-col width-60>
+            </ion-col>
+
+            <ion-col width-20 style="text-align: right;">
+              <ion-icon name="ios-arrow-forward" (click)="start()"></ion-icon>
+            </ion-col>
+          
+        </ion-row>
+
+    </ion-slide>
+</ion-slides>
+
+<!--   <button style="border-color:white;color:white;" outline block (click)="start()">Start Using App</button> -->
+
+
+
+
+
+</ion-content>

@@ -1,0 +1,23 @@
+.latest-ion-item{
+	border-bottom:1px solid #e9e9e9 !important;
+}
+
+.latest-button-item{
+
+	font-size : 12px;
+	position:relative;
+	top:-4px;
+	left:7px;
+}
+
+.checkbox-active{
+	color : #3B5999 !important;
+}
+
+.blue-text{
+	color: #3B5999 !important;
+}
+
+.black-text{
+	color: black;
+}

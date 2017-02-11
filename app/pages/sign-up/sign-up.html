@@ -1,0 +1,36 @@
+<!--
+  Generated template for the SignUpPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="sign-up" style="background-image:url('img/login.jpg');background-repeat: no-repeat;background-size: 100% 100%">
+
+  <ion-list class="list-form">
+
+    <ion-item class="margin-top" style="background:none;border-bottom:1px solid white;box-shadow:none;">
+      <ion-input style="color:white;border-bottom-color:white;box-shadow:none;" type="text" placeholder="{{pl_name}}"></ion-input>
+    </ion-item>
+
+    <ion-item class="margin-top" style="background:none;border-bottom:1px solid white;box-shadow:none;">
+      <ion-input style="color:white;border-bottom-color:white;box-shadow:none;" type="text" placeholder="{{pl_email}}"></ion-input>
+    </ion-item>
+
+    <ion-item class="margin-top" style="background:none;border-bottom:1px solid white;box-shadow:none;">
+      <ion-input style="color:white;border-bottom-color:white;box-shadow:none;" type="password" placeholder="{{pl_pwd}}"></ion-input>
+    </ion-item>
+
+    <ion-item class="margin-top" style="background:none;border-bottom:1px solid white;box-shadow:none;">
+      <ion-input style="color:white;border-bottom-color:white;box-shadow:none;" type="password" placeholder="{{pl_repwd}}"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button primary block (click)="signUp()">{{button_signup}}</button>
+</ion-content>

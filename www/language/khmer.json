@@ -1,0 +1,91 @@
+[
+  	{
+  		"LoginPage" : {
+				"title":"ទំព័រដើម",
+  				"facebook": "តាមរយៈហ្វេសប៊ុក",
+  				"pl_username": "ឈ្មោះ ឬ អីុម៉ែលរបស់អ្នក",
+  				"pl_password": "លេខសំងាត់របស់អ្នក",
+          "lb_or": "ឬ",
+          "button_register":"បង្កើតគណនី",
+  				"submit":"ចុចចូល",
+  				"forgotPassword":"ភ្លេចលេខសំងាត់?"
+  		},
+     
+     "HomePage": {
+          "tap_shop" : "ហាង",
+          "tap_food" : "អាហារ",
+          "head_latest" : "ថ្មីៗ",
+          "head_category" : "ប្រភេទ",
+          "head_location" : "ភ្នំពេញ",
+          "button_nearby" : "ជិតៗ",
+          "button_ecoupon" : "គូប៉ុង",
+          "button_topshop" : "ហាងពេញនិយម",
+          "button_topmember" : "សមាជិកកំពូល",
+          "button_event" : "ព្រិត្តិការណ៍",
+          "button_game" : "ឈ្នះរង្វាន់",
+          "sheet_title" : "អំពីហាង", 
+          "sheet_review" : "ផ្ដល់យោបល់",
+          "sheet_save" : "រក្សាទុក",
+          "sheet_share" : "ចែករំលែក",
+          "sheet_report" : "រាយការណ៍",
+          "sheet_turnoff" : "កំនត់ស្ងាត់",
+          "sheet_cancel" : "ចាកចេញ",
+          "title_food" : "អាហារ",
+          "title_shop" : "ហាង",
+          "title_location" : "ទីតាំង"
+      },
+
+      "DetailPage": {
+          "head_photo" : "បង្ហោះរូបភាព",
+          "head_checkin" : "កំនត់ទីតាំង",
+          "head_save" : "រក្សាទុក",
+          "head_share" : "ចែករំលែក",
+          "lb_photo" : "រូបភាព",
+          "lb_checkin" : "កំនត់ទីតាំង",
+          "lb_save" : "រក្សាទុក",
+          "lb_working_hour" : "ម៉ោងបើក",
+          "other_menu" : "មីនុយ",
+          "view_info" : "បង្ហាញពត៌មាន",
+          "popular_food" : "អាហារពេញនិយម",
+          "view_more" : "បង្ហាញបន្ត"    
+      },
+
+      "IntroPage": {
+          "lb_language" : "ភាសា",
+          "head_2slide" : "ដើរញាំុ សូមស្វាគមន៍",
+          "head_3slide" : "មុខងារពិសេសៗ",
+          "info_2slide" : "ដើរញាំុគឺជាកម្មវិធី...",
+          "info_3slide" : "រីករាយជាមួយ...",
+          "opt_en" : "អង់គ្លេស",
+          "opt_kh" : "ខ្មែរ",
+          "button_cancel" : "ចាកចេញ",
+          "button_ok" : "យល់ព្រម"          
+      },
+
+      "ForgetPwdPage": {
+          "title_forgetpwd" : "បាត់បង់លេខសំងាត់",
+          "pl_enter_email" : "សូមបញ្ចូលអីុម៉ែលរបស់អ្នក",
+          "button_search" : "ស្វែងរក"      
+      },
+
+      "SignupPage": {
+          "title" : "បង្កើតគណនី",
+          "pl_name" : "សូមបញ្ចូលឈ្មោះរបស់អ្នក",
+          "pl_email" : "សូមបញ្ចូលអីុម៉ែល",
+          "pl_pwd" : "សូមបញ្ចូលលេខសំងាត់",
+          "pl_repwd" : "សូមបញ្ជាក់លេខសំងាត់",
+          "button_signup" : "យល់ព្រម"
+      },
+
+      "ShopImagePage":{
+          "title":"រូបភាព"
+          
+      },
+
+      "ShopProductPage":{
+          "title":"អាហារ"
+          
+      }
+
+  	}
+]

@@ -1,0 +1,236 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar primary hideBackButton="true">
+<!--     <ion-buttons start>
+      <button>
+        <i class="fa fa-cutlery" aria-hidden="true" style="font-size: 21px;"></i>
+      </button>
+    </ion-buttons> -->
+      <ion-segment [(ngModel)]="type" light>
+        <ion-segment-button value="Places" (ionSelect)="getScrollHeightFood();">
+          {{tap_shop}}
+        </ion-segment-button>
+        <ion-segment-button value="Food" (ionSelect)="getScrollHeightPlace();">
+          {{tap_food}}
+        </ion-segment-button>
+      </ion-segment>
+    <ion-buttons end>
+      <button  (click)="goToSearch()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar >
+      <ion-row [ngSwitch]="type" style="font-size:13px;text-align:center;margin-top:3px">
+        <ion-col width-33 tappable  (click)="getLatest(type)" style="height:30px;">
+          <a  class="me-subheader blue-text">{{head_latest}}</a>
+        </ion-col>
+        <ion-col width-33 tappable (click)="getCategories(type)" style="height:30px;">
+          <a class="me-subheader" [ngClass]="(is_category_selected != 0 ) ? 'blue-text':'black-text'">{{head_category}}</a>
+        </ion-col>
+        <ion-col width-33 tappable (click)="getPhnomPenh(type)" style="height:30px;">
+          <a class="me-subheader">{{head_location}}</a>
+        </ion-col>
+      </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home common-bg">
+
+   <div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'Places'" class="animated slideInLeft">
+        <!-- Slider -->
+        <ion-slides pager class="pager-inner" [options]="slideAds">
+
+          <ion-slide *ngFor="let slide of slides">
+            <img src="{{ slide.src }}" alt="" style="width:100%;height:110px;object-fit:cover;">
+          </ion-slide>
+
+        </ion-slides>
+
+        <ion-row>
+        <ion-col width-50  style="height:50px;padding-left: 8px;">
+          <div tappable (click)="goToNearBy()" style="height:40px;background:white;padding: 7px 0 0 21px;">
+            <ion-icon name="md-pin" style="color:#507dbc;font-size:25px"></ion-icon><span style="font-size : 12px;position:relative;top:-4px;left:7px;">{{button_nearby}}</span>
+          </div>
+        </ion-col>
+        <ion-col width-50 style="height:50px;padding-right: 8px;">
+          <div style="height:40px;background:white;padding: 7px 0 0 21px;">
+            <ion-icon name="md-cash" style="color:#29bf12;font-size:25px"></ion-icon><span style="font-size : 12px;position:relative;top:-4px;left:7px;">{{button_ecoupon}}</span>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col (click)="popularShops()" width-50 style="height:50px;padding-left: 8px;">
+          <div style="height:40px;background:white;padding: 7px 0 0 21px;">
+            <ion-icon name="md-restaurant" style="color:#f21b3f;font-size:25px"></ion-icon><span style="font-size : 12px;position:relative;top:-4px;left:7px;">{{button_topshop}}</span>
+          </div>
+        </ion-col>
+        <ion-col width-50 style="height:50px;padding-right: 8px;">
+          <div style="height:40px;background:white;padding: 7px 0 0 21px;">
+            <ion-icon name="ios-contact" style="color:#08bdbd;font-size:25px"></ion-icon><span style="font-size : 12px;position:relative;top:-4px;left:7px;">{{button_topmember}}</span>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col width-50 style="height:50px;padding-left: 8px;">
+          <div style="height:40px;background:white;padding: 7px 0 0 21px;">
+            <ion-icon name="md-aperture" style="color:#de369d;font-size:25px"></ion-icon><span style="font-size : 12px;position:relative;top:-4px;left:7px;">{{button_event}}</span>
+          </div>
+        </ion-col>
+        <ion-col width-50 style="height:50px;padding-right: 8px;">
+          <div style="height:40px;background:white;padding: 7px 0 0 21px;">
+            <ion-icon name="md-game-controller-b" style="color:#595358;font-size:25px"></ion-icon><span style="font-size : 12px;position:relative;top:-4px;left:7px;">{{button_game}}</span>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <div *ngFor="let data of places" style="margin-top:4px;margin-bottom:8px;"><!-- open places dive -->
+        <ion-row style="background:white;">
+              <ion-col width-100 style="height:auto;">
+                <ion-item style="height:0px;margin-top:-4px;padding-left:10px;">
+                  <ion-avatar item-left>
+                    <img tappable (click)="placesDetail(data)"  src="http://dernham.com/admin/uploadimages/logo/small/{{data.shop_logo}}">
+                  </ion-avatar>
+                  <span><span tappable (click)="placesDetail(data)"  style="font-size:12px;font-weight:bold;color:black;float:left;" >{{data.shop_name_en}}</span><div tappable (click)="placesDetail(data)"  style="font-size: 11px;color: gray;position: absolute;top: 9px;right: 30px;width: auto;height: 15px;background: #fff;padding-left:11px;padding-right:8px" ><ion-icon name="ios-navigate" style="padding-right:3px;font-size:13px;color:gray;"></ion-icon>{{data.distance}}</div></span>
+                  <h2 tappable (click)="placesDetail(data)"  style="font-size:10px;clear:both;padding-top:3px;color:gray;" >{{data.shop_address}}</h2>
+    <!--               <p style="font-size:10px;">SPONSER</p> -->
+                  <ion-icon  (tap)="moreOptions()" name="ios-more" item-right style="color:#566774;font-size:30px;margin-right:-7px;padding: 5px">
+                  </ion-icon>
+                </ion-item>
+              </ion-col>
+        </ion-row>
+
+        <ion-row style="background: white !important">
+            <ion-col  tappable (click)="placesDetail(data)" width-100 style="padding:0;">
+              <img class="animated fadeIn"  lazyload="http://dernham.com/admin/uploadimages/cover/medium/{{data.shop_cover}}" style="width:100%;object-fit: cover;">
+             <!--  <div lazyload="http://dernham.com/admin/uploadimages/cover/medium/{{data.shop_cover}}" style="height: 60px;width: 100%;"></div> -->
+              <div style="width: 100%;height:auto;">
+                <a style="display: block; width:32.8%;float:left;margin-right:0.8%;">
+                  <img src="http://www.eatwell101.com/wp-content/uploads/2012/12/best-cooking-recipes.jpg" style="width:100%;height:auto;">
+                </a>
+                <a style="display: block; width:32.8%;float:left;margin-right:0.8%; ">
+                  <img src="http://clv.h-cdn.co/assets/15/24/640x640/square-1434068269-best-ever-fried-chicken-recipe.jpg" style="width:100%;height:auto;">
+                </a>
+                <a style="display: block; width:32.8%;float:left; " >
+                  <img src="http://www.eatwell101.com/wp-content/uploads/2012/12/best-cooking-recipes.jpg" style="width:100%;height:auto;">
+                </a>
+              </div>
+              <div>
+                 <a style="display: block; width:32.8%;float:left;margin-right:0.8%;">
+                  <img src="http://www.eatwell101.com/wp-content/uploads/2012/12/best-cooking-recipes.jpg" style="width:100%;height:auto;">
+                </a>
+                <a style="display: block; width:32.8%;float:left;margin-right:0.8%;">
+                  <img src="http://www.eatwell101.com/wp-content/uploads/2012/12/best-cooking-recipes.jpg" style="width:100%;height:auto;">
+                </a>
+                <a style="display: block; width:32.8%;float:left;">
+                  <img src="http://clv.h-cdn.co/assets/15/24/640x640/square-1434068269-best-ever-fried-chicken-recipe.jpg" style="width:100%;height:auto;">
+                </a>
+              </div>
+            
+              
+              <ion-item style="margin-top:-9px">
+                <ion-icon name="ios-heart-outline" item-left style="color:#566774;font-size:25px"></ion-icon>
+                <ion-icon name="ios-chatbubbles-outline" item-left style="color:#566774;font-size:25px"></ion-icon>
+                <ion-icon name="ios-share-outline" item-left style="color:#566774;font-size:25px"></ion-icon>
+              </ion-item>
+            </ion-col>
+        </ion-row>
+
+      </div><!-- close places div -->
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Food'" class="animated slideInRight">
+         <!-- Slider -->
+      <ion-slides pager class="pager-inner" [options]="slideAds">
+
+          <ion-slide *ngFor="let slide of slides">
+            <img src="{{ slide.src }}" alt="" style="width:100%;height:110px;object-fit:cover;">
+          </ion-slide>
+
+      </ion-slides>
+
+        <ion-row>
+          <ion-col width-50  style="height:50px;padding-left: 8px;">
+            <div style="height:40px;background:white;padding: 7px 0 0 21px;">
+              <ion-icon name="md-pin" style="color:#507dbc;font-size:25px"></ion-icon><span style="font-size : 12px;position:relative;top:-4px;left:7px;">{{button_nearby}}</span>
+            </div>
+          </ion-col>
+          <ion-col width-50 style="height:50px;padding-right: 8px;">
+            <div style="height:40px;background:white;padding: 7px 0 0 21px;">
+              <ion-icon name="md-cash" style="color:#29bf12;font-size:25px"></ion-icon><span style="font-size : 12px;position:relative;top:-4px;left:7px;">{{button_ecoupon}}</span>
+            </div>
+          </ion-col>
+        </ion-row>
+
+      <ion-row>
+        <ion-col width-50 (click)="popularShops()" style="height:50px;padding-left: 8px;">
+          <div style="height:40px;background:white;padding: 7px 0 0 21px;">
+            <ion-icon name="md-restaurant" style="color:#f21b3f;font-size:25px"></ion-icon><span style="font-size : 12px;position:relative;top:-4px;left:7px;">{{button_topshop}}</span>
+          </div>
+        </ion-col>
+        <ion-col width-50 style="height:50px;padding-right: 8px;">
+          <div style="height:40px;background:white;padding: 7px 0 0 21px;">
+            <ion-icon name="ios-contact" style="color:#08bdbd;font-size:25px"></ion-icon><span style="font-size : 12px;position:relative;top:-4px;left:7px;">{{button_topmember}}</span>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col width-50 style="height:50px;padding-left: 8px;">
+          <div style="height:40px;background:white;padding: 7px 0 0 21px;">
+            <ion-icon name="md-aperture" style="color:#de369d;font-size:25px"></ion-icon><span style="font-size : 12px;position:relative;top:-4px;left:7px;">{{button_event}}</span>
+          </div>
+        </ion-col>
+        <ion-col width-50 style="height:50px;padding-right: 8px;">
+          <div style="height:40px;background:white;padding: 7px 0 0 21px;">
+            <ion-icon name="md-game-controller-b" style="color:#595358;font-size:25px"></ion-icon><span style="font-size : 12px;position:relative;top:-4px;left:7px;">{{button_game}}</span>
+          </div>
+        </ion-col>
+      </ion-row>
+
+
+    <div style="padding-bottom: 50px">
+      <div class="product-box" *ngFor="let item of products" style="margin-top: 10px;" >
+        
+        <div style="background:white;border-radius:3px;">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlPxeHf86P98olmKDMkxn4ei6H5ERBVAo6yYD5MhQOb47pCLoC" style="border-radius:3px;">
+          <div class="content" style="padding: 0px 2px 3px 8px;">
+            <p class="product-content" style="font-weight:bold;" >{{item.pro_name_en}}</p>
+            <p class="product-content" >{{item.pro_price}}</p>
+            <p class="product-content" >{{item.shop_name_en}}sdfsfsfsf</p>
+          </div>
+        </div>
+   
+      </div>
+      
+    </div>   
+    
+   
+
+    </ion-list>
+    <ion-infinite-scroll *ngIf = " type == 'Places' && page <= shop_total_page " (ionInfinite)="doInfinitePlace($event)">
+     <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    <p *ngIf = " type == 'Food' " style="color:#d2d2d2">s</p>
+    <ion-infinite-scroll *ngIf = " type == 'Food' && product_page <= product_total_page " (ionInfinite)="doInfiniteFood($event)">
+       <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll> 
+     
+    
+
+
+  </div>
+
+ 
+
+</ion-content>

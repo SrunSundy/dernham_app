@@ -1,0 +1,192 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar primary>
+    <ion-title style="font-size: 14px;font-weight: bold;">{{shop_name_en}} {{shop_name_kh}}</ion-title>
+    <ion-buttons end>
+      <button>
+        <ion-icon name="ios-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home common-bg">
+  <div  class="box-load"  [ngClass]="(box_load == 'none') ? 'animated fadeOut': '' " [style.display]="box_load_none"></div>
+        
+        
+        <ion-row style="margin-top:-3px;">
+            <ion-col width-100 style="background:white;padding-left: 15px;padding-top: 10px;font-size: 13px;padding-bottom: 10px;">
+                <a style="color:black;">{{shop_name_en}} {{shop_name_kh}}</a>
+            </ion-col>
+        </ion-row>
+        
+
+        <ion-row style="font-size:12px;margin-top:1px">
+            <ion-col width-75 style="background:white;padding-left:15px;">
+              <a class="me-subheader" style="font-size:12px;color:#535658;">{{lb_working_hour}}</a><br><a class="me-subheader" style="font-size: 12px;color: #535658;">{{open_time}} - {{close_time}}</a>
+            </ion-col>
+            <ion-col width-25 style="background:white;text-align:right;padding-right:20px">
+              <button (click)="callTo('tel: +85598271863')" ion-button  small icon-left style="color:#3a9203;background-color:#cccaca">
+                <ion-icon name="ios-call" style="color;#3a9203"></ion-icon>
+                <p>Call</p>
+              </button>
+            </ion-col>  
+        </ion-row>
+
+        <ion-row width-100 style="background:white;margin-bottom: 1px" *ngIf="shopDetail.shop_working_day && shopDetail.shop_working_day.length > 0 ">
+        	<ion-col width-10 style="padding-left:15px;">
+              <div style="color:#807d7d;margin-top:5px;margin-bottom:5px;">
+                <ion-icon name="time" style="font-size:20px;"></ion-icon>
+              </div>
+            </ion-col> 
+            <a *ngFor="let item of shopDetail.shop_working_day; let i = index" class="me-subheader" style="font-size:12px;position:relative;top: -4px;left: 7px;">
+                  <span *ngIf="i != 0"> - </span>{{item}}
+                </a> 
+        </ion-row>
+
+        <ion-row width-100 style="background:white;font-size:12px;margin-top:-8px;" *ngIf="shopDetail.shop_view_count">
+            <ion-col width-10 style="padding-left:15px;">
+              <div style="color:#807d7d;margin-top:5px;">
+                <ion-icon name="logo-usd" style="font-size:20px;"></ion-icon>
+              </div>
+            </ion-col> 
+            <ion-col width-75>
+              <div style="margin-top:12px;line-height:17px;">
+                 <a class="me-subheader" style="font-size:12px;position:relative;top: -4px;left: 7px;">$ {{shopDetail.shop_view_count}} views</a> 
+              </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row width-100 style="background:white;font-size:12px;margin-top:7px;min-height: 57px;" *ngIf="shopDetail.shop_distance">
+            <ion-col width-10 style="padding-left:15px;">
+              <div style="color:#807d7d;margin-top:5px;margin-bottom:5px;">
+                <ion-icon name="ios-navigate" style="font-size:20px;"></ion-icon>
+              </div>
+            </ion-col> 
+
+            <ion-col width-75>
+              <div style="margin-top:10px;margin-bottom:5px;line-height:17px;">
+                 <a class="me-subheader" style="font-size:12px;position:relative;top: -4px;left: 7px;">{{shopDetail.shop_distance}}</a> 
+              </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row width-100 style="background:white;font-size:12px;margin-top:7px;min-height: 57px;" *ngIf="shopDetail.shop_capacity">
+            <ion-col width-10 style="padding-left:15px;">
+              <div style="color:#807d7d;margin-top:5px;margin-bottom:5px;">
+                <ion-icon name="ios-navigate" style="font-size:20px;"></ion-icon>
+              </div>
+            </ion-col> 
+
+            <ion-col width-75>
+              <div style="margin-top:10px;margin-bottom:5px;line-height:17px;">
+                 <a class="me-subheader" style="font-size:12px;position:relative;top: -4px;left: 7px;">{{shopDetail.shop_capacity}} person</a> 
+              </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row width-100 style="background:white;font-size:12px;margin-top:-20px;" *ngIf="serve_category">
+            <ion-col width-10 style="padding-left:15px;">
+              <div style="color:#807d7d;margin-top:5px;margin-bottom:5px;">
+                <ion-icon name="md-albums" style="font-size:20px;"></ion-icon>
+              </div>
+            </ion-col> 
+            <ion-col width-75>
+              <div style="margin-top:10px;margin-bottom:5px;line-height:17px;">
+                <a *ngFor="let item of serve_category; let i = index" class="me-subheader" style="font-size:12px;position:relative;top: -4px;left: 7px;">
+                  <span *ngIf="i != 0"> - </span>{{item.serve_category_name}}
+                </a> 
+              </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row width-100 style="background:white;font-size:12px;margin-top:-8px;" *ngIf="shopDetail.product_average_price">
+            <ion-col width-10 style="padding-left:15px;">
+              <div style="color:#807d7d;margin-top:5px;">
+                <ion-icon name="logo-usd" style="font-size:20px;"></ion-icon>
+              </div>
+            </ion-col> 
+            <ion-col width-75>
+              <div style="margin-top:12px;line-height:17px;">
+                 <a class="me-subheader" style="font-size:12px;position:relative;top: -4px;left: 7px;">$ {{shopDetail.product_average_price}}</a> 
+              </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row width-100 style="background:white;font-size:12px;margin-top:-8px;" *ngIf="shopDetail.shop_phone">
+            <ion-col width-10 style="padding-left:15px;">
+              <div style="color:#807d7d;margin-top:5px;">
+                <ion-icon name="ios-call" style="font-size:20px;"></ion-icon>
+              </div>
+            </ion-col> 
+            <ion-col width-75>
+              <div style="margin-top:12px;line-height:17px;">
+                 <a class="me-subheader" style="font-size:12px;position:relative;top: -4px;left: 7px;">{{shopDetail.shop_phone}}</a> 
+              </div>
+            </ion-col>
+        </ion-row>
+
+        <ion-row width-100 style="background:white;font-size:12px;margin-top:-8px;" *ngIf="shopDetail.shop_email">
+            <ion-col width-10 style="padding-left:15px;">
+              <div style="color:#807d7d;margin-top:5px;">
+                <ion-icon name="logo-usd" style="font-size:20px;"></ion-icon>
+              </div>
+            </ion-col> 
+            <ion-col width-75>
+              <div style="margin-top:12px;line-height:17px;">
+                 <a class="me-subheader" style="font-size:12px;position:relative;top: -4px;left: 7px;">{{shopDetail.shop_email}}</a> 
+              </div>
+            </ion-col>
+        </ion-row>
+
+        
+
+        <ion-row width-100 style="background:white;font-size:12px;margin-top:-8px;" *ngIf="shopDetail.shop_address">
+            <ion-col width-10 style="padding-left:15px;">
+              <div style="color:#807d7d;margin-top:5px;">
+                <ion-icon name="logo-usd" style="font-size:20px;"></ion-icon>
+              </div>
+            </ion-col> 
+            <ion-col width-75>
+              <div style="margin-top:12px;line-height:17px;">
+                 <a class="me-subheader" style="font-size:12px;position:relative;top: -4px;left: 7px;">{{shopDetail.shop_address}}</a> 
+              </div>
+            </ion-col>
+        </ion-row>
+
+		<ion-row width-100 style="background:white;font-size:12px;margin-top:-8px;" *ngIf="shopDetail.shop_description">
+            <ion-col width-10 style="padding-left:15px;">
+              <div style="color:#807d7d;margin-top:5px;">
+                <ion-icon name="logo-usd" style="font-size:20px;"></ion-icon>
+              </div>
+            </ion-col> 
+            <ion-col width-75>
+              <div style="margin-top:12px;line-height:17px;">
+                 <a class="me-subheader" style="font-size:12px;position:relative;top: -4px;left: 7px;">{{shopDetail.shop_description}}</a> 
+              </div>
+            </ion-col>
+        </ion-row>
+        
+
+        <!-- Shop facility -->
+        <ion-row width-100 style="background:white;margin-bottom: 1px" *ngIf="shop_facility">
+            <ion-col width-10 style="padding-left: 15px;">
+                <div style="color:#807d7d;">
+                  <ion-icon name="md-checkbox" style="font-size:20px;"></ion-icon>
+                </div>
+            </ion-col>
+
+            <ion-col width-10 offset-80 *ngIf="shop_facility && shop_facility.length > 4">
+                <div style="color:#807d7d;">
+                  <ion-icon name="ios-arrow-forward" style="font-size:20px;"></ion-icon>
+                </div>
+            </ion-col>
+        </ion-row>
+
+</ion-content>

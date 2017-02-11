@@ -1,0 +1,17 @@
+.box-load {
+	width: 100%;
+	height: 100%;
+	background: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	display:block;
+}
+
+.google-map-static{
+	
+	background-repeat: no-repeat;;
+	background-size: 100% auto;
+	background-image: url('https://maps.googleapis.com/maps/api/staticmap?zoom=16&size=400x140&markers=11.548516586546381,104.834465830373764&center=11.548316586546381,104.83165830373764&style=feature:road.local%7Celement:geometry%7Ccolor:0xdbdbdb&style=feature:landscape%7Celement:geometry.fill%7Ccolor:0xfffcee&style=element:labels%7Cinvert_lightness:true&style=feature:road.arterial%7Celement:labels%7Cinvert_lightness:false');
+}

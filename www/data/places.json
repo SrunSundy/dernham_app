@@ -1,0 +1,198 @@
+[
+	{	"id" : "1",
+		"shop_name_en" : "K.E Cafe & Lounge",
+		"shop_logo" : "img/logo/KE Cafe.jpg",
+		"shop_cover" : "img/places/KE Cafe.jpg",
+		"food" : "Melbourne Beef Sandwich & Chocolate Frappe",
+		"price": "1.00",
+		"reviews" : "321",
+		"photo" : "960",
+		"checkin" : "51",
+		"save" : "286",
+		"rate" : "7.6",
+		"address" : "739, st. 128 Kampucheakrom, Phnom Penh",
+		"type" : "Restaurant - Cafe",
+		"phone" :"098271863",
+		"wifi" : "Cafe & Lounge",
+		"password" : "cafe123lounge",
+		"moremenu" : [
+		{
+			"shop_name_en" : "Stewed Duck Breast with Rice",
+			"shop_cover" : "Stewed Duck Breast with Rice.jpg"
+		},
+		{
+			"shop_name_en" : "Ms. Pink",
+			"shop_cover" : "h.jpg"
+		}
+		],
+		"popularitem" :[
+		{
+			"shop_name_en" : "Lok Lak Australian Beef with Rice",
+			"shop_cover" : "Lok Lak Australian Beef with Rice.jpg"
+		},
+		{
+			"shop_name_en" : "Angkorian Roasted Duck with Rice",
+			"shop_cover" : "Angkorian Roasted Duck with Rice.jpg"
+		}
+		],
+		"time" : "8:00 AM - 8:00 PM"
+		
+	},
+	{
+		"id" : "2",
+		"shop_name_en" : "Delux Chicken",
+		"shop_logo" : "img/logo/Delux Chicken.jpg",
+		"shop_cover" : "img/places/Delux Chicken.jpg",
+		"food" : "Crispy Chicken",
+		"price": "4.00",
+		"reviews" : "250",
+		"photo" : "450",
+		"checkin" : "40",
+		"save" : "156",
+		"rate" : "5.3",
+		"address" : "No.137 , Preah Norodom Blvd( St.41)",
+		"type" : "Restaurant - Fast Food",
+		"phone" :"093971733",
+		"wifi" : "deluxcambodia",
+		"password" : "deluxcambodia19",
+		"moremenu" : [
+		{
+			"name" : "Dim Sum",
+			"shop_cover" : "Dim Sum.jpg"
+		},
+		{
+			"name" : "ជ្រូកខ",
+			"shop_cover" : "b.jpg"
+		}
+		],
+		"popularitem" :[
+		{
+			"name" : "បាយចានក្អមជើងជ្រូកខ",
+			"shop_cover" : "c.jpg"
+		},
+		{
+			"name" : "បាយចានក្អមជ្រូកខ្វៃ",
+			"shop_cover" : "d.jpg"
+		}
+		],
+		"time" : "11:00 AM - 8:00 PM"
+
+	},
+	{	"id" : "3",
+		"name" : "Teuk Sieng",
+		"shop_logo" : "img/logo/Teuk Sieng.jpg",
+		"shop_cover" : "img/places/Teuk Sieng.jpg",
+		"food" : "មីស៊ុបម៉ាម៉ាយាំុ FUNGUS ពិសេស",
+		"price": "1.00",
+		"reviews" : "150",
+		"photo" : "532",
+		"checkin" : "64",
+		"save" : "267",
+		"rate" : "5.8",
+		"address" : "ទីតាំងទី១ ផ្លូវត្រសក់ផ្អែម៖ #124, ផ្លូវ63 (ជិតផ្សារស៊ីឡិប), សង្កាត់ចតុមុខ, ខណ្ឌដូនពេញ, ភ្នំពេញទីតាំងទី២ ទួលទំពូង៖ #95A, ផ្លូវ432 សង្កាត់ទួលទំពួង2, ខណ្ឌចំការមន, ភ្នំពេញ",
+		"type" : "Restaurant - Sea Food",
+		"phone" :"010666520",
+		"wifi" : "Teuk Sieng2016",
+		"password" : "1@#45^89",
+		"moremenu" : [
+		{
+			"name" : "Dim Sum",
+			"shop_cover" : "Dim Sum.jpg"
+		},
+		{
+			"name" : "ជ្រូកខ",
+			"shop_cover" : "b.jpg"
+		}
+		],
+		"popularitem" :[
+		{
+			"name" : "បាយចានក្អមជើងជ្រូកខ",
+			"shop_cover" : "c.jpg"
+		},
+		{
+			"name" : "បាយចានក្អមជ្រូកខ្វៃ",
+			"shop_cover" : "d.jpg"
+		}
+		],
+		"time" : "3:00 PM - 9:00 PM"
+
+		
+	},
+	{	"id" : "4",
+		"name" : "Mo-Mo-Paradise Cambodia",
+		"shop_logo" : "img/logo/Mo-Mo-Paradise Cambodia.jpg",
+		"shop_cover" : "img/places/Mo-Mo-Paradise Cambodia.jpg",
+		"food" : "ស៊ុគិយ៉ាគិ",
+		"price": "1.00",
+		"reviews" : "340",
+		"photo" : "678",
+		"checkin" : "79",
+		"save" : "341",
+		"rate" : "6.2",
+		"address" : "#219 ផ្លូវប៉ាស្ទ័រ (51) កែងនឹងផ្លូវ 306 បឹងកេងកង ភ្នំពេញ",
+		"type" : "Restaurant - Soup",
+		"phone" :"010959905",
+		"wifi" : "momoparadise",
+		"password" : "cambodia@cambodia",
+		"moremenu" : [
+		{
+			"name" : "មីស៊ុបគីមឈី​ ពិសេស",
+			"shop_cover" : "e.jpg"
+		},
+		{
+			"name" : "មីស៊ុបម៉ាម៉ាយាំុ ពិសេស",
+			"shop_cover" : "f.jpg"
+		}
+		],
+		"popularitem" :[
+		{
+			"name" : "មីស៊ុបតៃវ៉ាន់ ពិសេស",
+			"shop_cover" : "g.jpg"
+		}
+		],
+		"time" : "4.00 PM - 10:00 PM"
+
+		
+	},
+	{	"id" : "5",
+		"shop_name_en" : "តៅហ៊ូអាំងពួកម៉ាកខ្ញុំ",
+		"shop_logo" : "img/logo/a.jpg",
+		"shop_cover" : "img/places/a.jpg",
+		"food" : "បាយចានក្អមជ្រូកខ្វៃ",
+		"price": "1.00",
+		"reviews" : "70",
+		"photo" : "616",
+		"checkin" : "37",
+		"save" : "198",
+		"rate" : "5.1",
+		"address" : "ផ្លូវក្រោយសាលាវ៉ាន់ដា",
+		"type" : "Restaurant - Food",
+		"phone" :"092979988",
+		"wifi" : "taohoupoukmakknhom",
+		"password" : "taohou2016",
+		"moremenu" : [
+		{
+			"shop_name_en" : "Dim Sum",
+			"shop_cover" : "Dim Sum.jpg"
+		},
+		{
+			"shop_name_en" : "ជ្រូកខ",
+			"shop_cover" : "b.jpg"
+		}
+		],
+		"popularitem" :[
+		{
+			"shop_name_en" : "បាយចានក្អមជើងជ្រូកខ",
+			"shop_cover" : "c.jpg"
+		},
+		{
+			"shop_name_en" : "បាយចានក្អមជ្រូកខ្វៃ",
+			"shop_cover" : "d.jpg"
+		}
+		],
+		"time" : "2:00 PM - 8:00 PM"
+		
+	}
+	
+
+]

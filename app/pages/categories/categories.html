@@ -1,0 +1,45 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<style>
+.checkbox-active{
+  color:#3B5999;
+}
+</style>
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>{{title_shop}}</ion-title>
+    <ion-buttons start>
+    <button (click)="dismiss()">
+        <ion-icon name="md-close"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login">
+
+  <ion-list >
+
+    <ion-item-divider tappable (click)="getCateory(0, head_category )">
+      <b [class.checkbox-active]="cateIdService == 0 " >{{head_category}}</b>
+      <ion-icon *ngIf="cateIdService == 0 " style="font-size:35px;" facebook item-right name="ios-checkmark"></ion-icon>
+    </ion-item-divider>
+    
+    <ion-item [class.checkbox-active]="item.serve_category_id == cateIdService" *ngFor="let item of data" tappable (click)="getCateory(item.serve_category_id, item.serve_category_name )" style="border-bottom:1px solid #e9e9e9" >
+      <span item-left>
+       <!--  <img src="{{item.serve_category_icon}}"> -->
+        <img src="http://dernham.com/admin/uploadimages/icon/{{item.serve_category_icon}}" style="width: 25px;border: 0;border-radius: 5px;"/>
+      </span>
+      <span style="font-size : 12px;">{{item.serve_category_name}}</span>
+      <ion-icon *ngIf="cateIdService != 0 && item.serve_category_id == cateIdService" style="font-size:35px;" facebook item-right name="ios-checkmark"></ion-icon>
+    </ion-item>
+   
+  </ion-list>
+
+
+
+</ion-content>
