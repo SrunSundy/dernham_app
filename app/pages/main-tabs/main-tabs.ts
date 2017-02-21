@@ -3,7 +3,7 @@ import {NavController} from 'ionic-angular';
 import {HomePage} from '../home/home';
 import {CollectionsPage} from '../collections/collections';
 import {FeedPage}from '../feed/feed';
-import {AccountPage} from '../account/account';
+import {UserAccountPage} from '../user-account/user-account';
 
 /*
  Generated class for the LoginPage page.
@@ -18,7 +18,7 @@ export class MainTabsPage {
   private tabHome = HomePage;
   private tabCollections = CollectionsPage;
   private tabFeed = FeedPage;
-  private tabAccount = AccountPage;
+  private tabAccount = UserAccountPage;
 
   constructor(private nav: NavController) {}
 }

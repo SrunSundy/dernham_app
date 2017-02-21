@@ -1,0 +1,12 @@
+.user {
+	/* do not group these rules */
+	*::-webkit-input-placeholder {
+	  color: white !important;
+	}
+	*:-moz-placeholder {
+	  color: white !important;
+	}
+	*:-ms-input-placeholder { /* IE10+ */
+	  color: white !important;
+	}
+}

@@ -242,22 +242,19 @@ export class DetailPage {
           {"shop_img":this.shop_cover,"shop_id":6}];
           
            
-          this.shop_popular_product=[{"image":this.shop_cover},
-          {"image":this.shop_cover},
-          {"image":this.shop_cover},
-          {"image":this.shop_cover},
-          {"image":this.shop_cover}];
+          // this.shop_popular_product=[{"image":this.shop_cover},
+          // {"image":this.shop_cover},
+          // {"image":this.shop_cover},
+          // {"image":this.shop_cover},
+          // {"image":this.shop_cover}];
 
-          this.shop_image=[{"image":this.shop_cover},
-          {"image":this.shop_cover},
-          {"image":this.shop_cover},
-          {"image":this.shop_cover},
-          {"image":this.shop_cover},
-          {"image":this.shop_cover}];
+          this.shop_popular_product=this.shopDetail.shop_popular_product;
 
-          this.product_path="http://dernham.com/admin/uploadimages/cover/medium/";
+          this.shop_image=this.shopDetail.shop_related_img;
+
+          this.product_path="http://dernham.com/admin/uploadimages/product/small/";
           this.facility_path="http://dernham.com/admin/uploadimages/cover/medium/";
-          this.shop_image_path="http://dernham.com/admin/uploadimages/cover/medium/";
+          this.shop_image_path="http://dernham.com/admin/uploadimages/shopimages/small/";
           //callback function when data detail load
           if( typeof callback === "function"){
           callback();

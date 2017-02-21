@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
-import {NavController, NavParams, Storage, LocalStorage, Slides } from 'ionic-angular';
+import {Component,Inject} from '@angular/core';
+import {NavController, NavParams, Storage, LocalStorage, Slides,AlertController } from 'ionic-angular';
 import {HomePage} from '../home/home';
-import {Http} from '@angular/http';
 import {MainTabsPage} from '../main-tabs/main-tabs';
+import {Http, Headers, RequestOptions} from '@angular/http';
 
+import {APP_CONFIG, AppConfig} from '../../config/app-config';
 /*
  Generated class for the LoginPage page.
 
@@ -23,7 +24,16 @@ export class SignUpPage {
   pl_repwd:any;
   button_signup:any;
 
-  constructor(private nav: NavController, private http: Http) {
+  private baseUrl: any;
+  private apiKey: any;
+
+
+  constructor(public alertCtrl: AlertController,private nav: NavController, private http: Http,@Inject(APP_CONFIG) config:AppConfig) {
+    //load base url 
+    this.baseUrl = config.baseUrl;
+    this.apiKey = config.apiKey;
+
+    //check language
     this.lan = new Storage(LocalStorage);
     this.lan.get('lan').then((result) => {
       if (result == 'en') {
@@ -49,11 +59,60 @@ export class SignUpPage {
     });
 
   }
+  signUp(fullname,email,password,repassword){
+    if(password != repassword) {
+        return false;
+    }
+      //request data
+    let body = JSON.stringify({
+      "request_data" : {
+        "fullname" : fullname,
+        "email" : email,
+        "password" : password
+      }
+    });
+    let headers = new Headers();
+        headers.append('X-API-KEY', this.apiKey);
+        headers.append('Content-Type', 'application/json');
+    this.http.post(this.baseUrl+'/UserRestController/registerUser',body,{headers : headers})
+      .map(res => res.json())
+      .subscribe(data => {
 
+        //promp alert
+          let prompt = this.alertCtrl.create({
+            title: 'Verify code',
+            message: "Please enter the security code sent to : "+email,
+            inputs: [
+              {
+                name: 'title',
+                placeholder: 'Security code'
+              },
+            ],
+            buttons: [
+              {
+                text: 'Cancel',
+                handler: data => {
+                  console.log('Cancel clicked');
+                }
+              },
+              {
+                text: 'Ok',
+                handler: data => {
+                  //request data 
+                  alert(data.title);
+                  //console.log(data);
+                }
+              }
+            ]
+          });
+          prompt.present();
+      
 
-  // process sign up
-  signUp() {
-    // add our sign up code here
-    this.nav.push(MainTabsPage);
+      },err => {
+        alert(JSON.stringify(err));
+         //this.presentAlert("Error" ,JSON.stringify(err));
+      }); 
   }
+
+
 }

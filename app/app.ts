@@ -37,6 +37,8 @@ import {ShopProductsPage} from './pages/shop-products/shop-products';
 import {PopularShopsPage} from './pages/popular-shops/popular-shops';
 import {SearchDetailPage} from './pages/search-detail/search-detail';
 import {ShopDetailPage} from './pages/shop-detail/shop-detail';
+import {UserAccountPage} from './pages/user-account/user-account';
+import {EditUserAccountPage} from './pages/edit-user-account/edit-user-account';
 import { APP_CONFIG, SYS_CONFIG, AppConfig } from './config/app-config';
 
 @Component({
@@ -56,6 +58,7 @@ export class MyApp {
             this.rootPage = IntroPage;
         } else {
           this.rootPage = LoginPage;
+          //this.rootPage = UserAccountPage;
         }
         n++;
 

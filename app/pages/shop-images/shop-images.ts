@@ -48,34 +48,22 @@ export class ShopImagesPage {
     });
 
 
-    this.shop_images=[{"sh_img_name":"cover_gOb0ri4BJo7c8z2ZqPJV_1479629942.jpg"},
-          {"sh_img_name":"cover_DLdQtWAmvmTREAW6XU8k_1479629358.jpg"},
-          {"sh_img_name":"cover_gOb0ri4BJo7c8z2ZqPJV_1479629942.jpg"},
-          {"sh_img_name":"cover_DLdQtWAmvmTREAW6XU8k_1479629358.jpg"},
-          {"sh_img_name":"cover_gOb0ri4BJo7c8z2ZqPJV_1479629942.jpg"},
-          {"sh_img_name":"cover_DLdQtWAmvmTREAW6XU8k_1479629358.jpg"},
-          {"sh_img_name":"cover_gOb0ri4BJo7c8z2ZqPJV_1479629942.jpg"},
+    // this.shop_images=[{"sh_img_name":"cover_gOb0ri4BJo7c8z2ZqPJV_1479629942.jpg"},
+    //       {"sh_img_name":"cover_DLdQtWAmvmTREAW6XU8k_1479629358.jpg"},
+    //       {"sh_img_name":"cover_gOb0ri4BJo7c8z2ZqPJV_1479629942.jpg"},
+    //       {"sh_img_name":"cover_DLdQtWAmvmTREAW6XU8k_1479629358.jpg"},
+    //       {"sh_img_name":"cover_gOb0ri4BJo7c8z2ZqPJV_1479629942.jpg"},
+    //       {"sh_img_name":"cover_DLdQtWAmvmTREAW6XU8k_1479629358.jpg"},
+    //       {"sh_img_name":"cover_gOb0ri4BJo7c8z2ZqPJV_1479629942.jpg"},
           
-          {"sh_img_name":"cover_gOb0ri4BJo7c8z2ZqPJV_1479629942.jpg"},
-          {"sh_img_name":"cover_DLdQtWAmvmTREAW6XU8k_1479629358.jpg"},
-          {"sh_img_name":"cover_gOb0ri4BJo7c8z2ZqPJV_1479629942.jpg"},
-          {"sh_img_name":"cover_DLdQtWAmvmTREAW6XU8k_1479629358.jpg"},
-          {"sh_img_name":"cover_gOb0ri4BJo7c8z2ZqPJV_1479629942.jpg"},
-          {"sh_img_name":"cover_DLdQtWAmvmTREAW6XU8k_1479629358.jpg"}];
+    //       {"sh_img_name":"cover_gOb0ri4BJo7c8z2ZqPJV_1479629942.jpg"},
+    //       {"sh_img_name":"cover_DLdQtWAmvmTREAW6XU8k_1479629358.jpg"},
+    //       {"sh_img_name":"cover_gOb0ri4BJo7c8z2ZqPJV_1479629942.jpg"},
+    //       {"sh_img_name":"cover_DLdQtWAmvmTREAW6XU8k_1479629358.jpg"},
+    //       {"sh_img_name":"cover_gOb0ri4BJo7c8z2ZqPJV_1479629942.jpg"},
+    //       {"sh_img_name":"cover_DLdQtWAmvmTREAW6XU8k_1479629358.jpg"}];
 
-    this.shop_image_path="http://dernham.com/admin/uploadimages/cover/medium/";
-    this.shop_image=[];
-    var i,row=0;
-    for(i=0;i<this.shop_images.length;i+=3){
-       //this.shop_image.push(this.shop_images[i],this.shop_images[i+1]);
-       this.shop_image[row]=[];
-       this.shop_image[row][0]=this.shop_images[i];
-       if(this.shop_images[i+1])
-         this.shop_image[row][1]=this.shop_images[i+1];
-       if(this.shop_images[i+2])
-         this.shop_image[row][2]=this.shop_images[i+2];
-       row++;
-    }
+    
     
 
   }
@@ -86,7 +74,7 @@ export class ShopImagesPage {
       headers.append('Content-Type', 'application/json');
     var body = JSON.stringify({
       "request_data" : {
-      "shop_id" : 19,
+      "shop_id" : this.shopId,
       "img_type" :3,
       "row" : 6,
       "page": 1
@@ -96,7 +84,24 @@ export class ShopImagesPage {
       this.http.post('http://dernham.com/dernham_API/API/ShopImageRestController/listshopimagebyshopid',body,{headers : headers})
       .map(res => res.json())
       .subscribe(data => {
-          //this.shop_images = data['response_data'];
+          this.shop_images = data['response_data'];
+
+
+          this.shop_image_path="http://dernham.com/admin/uploadimages/shopimages/small/";
+          this.shop_image=[];
+          var i,row=0;
+
+          for(i=0;i<this.shop_images.length;i+=3){
+             //this.shop_image.push(this.shop_images[i],this.shop_images[i+1]);
+             this.shop_image[row]=[];
+             this.shop_image[row][0]=this.shop_images[i];
+             if(this.shop_images[i+1])
+               this.shop_image[row][1]=this.shop_images[i+1];
+             if(this.shop_images[i+2])
+               this.shop_image[row][2]=this.shop_images[i+2];
+             row++;
+          }
+
       },err => {
           alert(JSON.stringify(err));
       });

@@ -116,9 +116,6 @@ export class HomePage {
       this.baseUrl = config.baseUrl;
       this.apiKey = config.apiKey;
 
-      console.log(this.baseUrl);
-      console.log(this.apiKey);
-
   }
 
   ionViewLoaded(){
@@ -130,7 +127,7 @@ export class HomePage {
     setTimeout(function(){
       loadingprocess.present();
 
-      current_obj.loadCategoy();
+      current_obj.loadCategory();
       current_obj.loadProducts(false,function(){});
       current_obj.loadPlaces(false, function(){}, loadingprocess);
     },800);    
@@ -203,7 +200,7 @@ export class HomePage {
     });
   }
 
-  loadCategoy(){
+  loadCategory(){
     var headers = new Headers();
         headers.append('X-API-KEY', this.apiKey);
         headers.append('Content-Type', 'application/json');
