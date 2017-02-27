@@ -9,6 +9,7 @@ import {NavController} from 'ionic-angular';
  */
 @Component({
   templateUrl: 'build/pages/account/account.html',
+  styleUrls: ['css/edituser.css' ]
 })
 export class AccountPage {
   constructor(private nav: NavController) {}

@@ -6,82 +6,113 @@
 -->
 <ion-header>
   <ion-navbar primary>
-    <ion-title>Feed</ion-title>
+    <ion-title>Notification</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="feed common-bg">
 
-  <div class="button-set set-2">
-    <button primary>
-      Local Feed
-    </button>
-    <button light>
-      My Feed
-    </button>
-  </div>
+  <ion-list>
 
-  <ion-list class="list-no-border">
-
-    <ion-item *ngFor="let review of reviews" text-wrap class="margin-bottom">
-      <div class="item-header border-bottom" (click)="viewPlace(review.place.id)">
-        <img src="{{ review.place.photo}}" class="pull-left item-avatar" alt="">
-        <div class="pull-left">
-          <h3>{{ review.place.name }}</h3>
-          <div class="secondary uppercase text-sm">{{ review.place.district }}, {{ review.place.city }}</div>
-        </div>
-        <div class="clear"></div>
-      </div>
+    <ion-item class="item-line">
+      <ion-avatar item-left>
+        <img src="img/user/mike.png" alt="">
+      </ion-avatar>
       <div>
-        <div class="item-header">
-          <img src="{{ review.author.profile_picture}}" class="pull-left item-avatar profile-picture" alt="">
-          <div class="pull-left">
-            <h3>{{ review.author.username }}</h3>
-            <div class="secondary uppercase text-sm">{{ review.author.num_reviews }} Reviews, {{
-              review.author.num_folowers }} Follower
-            </div>
-          </div>
-        </div>
-        <div class="clear"></div>
+          <p style="font-size: 13px;">Ben Foster liked your post.</p>
+          <ion-icon name="ios-heart" style="color:#CB202D;font-size:18px"></ion-icon>
+          <span style="color:gray;font-size : 12px;position:relative;top:-4px;left:7px;"> 2 mins</span>
       </div>
-
-      <div>
-        <div class="pull-left secondary text-sm">{{ review.time }}</div>
-        <div class="pull-right secondary text-sm">
-          RATED
-          <span class="rating">
-            {{ review.rating }}
-          </span>
-        </div>
-
-        <div class="clear"></div>
-      </div>
-
-      <div class="text-sm" margin-top>
-        {{ review.text }}
-      </div>
-
-      <div class="post-images">
-        <img *ngFor="let photo of review.photos" src="{{ photo.thumb }}">
-      </div>
-
-      <div>
-        <div class="pull-left action-buttons">
-          <ion-icon name="md-heart-outline" danger [hidden]="!review.liked"></ion-icon>
-          <ion-icon name="md-heart-outline" secondary [hidden]="review.liked"></ion-icon>
-          <ion-icon name="ios-chatboxes-outline" danger [hidden]="!review.commented"></ion-icon>
-          <ion-icon name="ios-chatboxes-outline" secondary [hidden]="review.commented"></ion-icon>
-          <ion-icon name="md-share" secondary></ion-icon>
-        </div>
-
-        <div class="pull-right uppercase secondary text-sm">
-          {{ review.num_likes }} likes &bull;
-          {{ review.num_comments }} comments
-        </div>
-
-        <div class="clear"></div>
-      </div>
-
+      <ion-avatar item-right>
+        <img src="img/user/mike.png" alt="" style="border-radius: 0px;max-height: 4rem;max-width: 4rem;">
+      </ion-avatar>
     </ion-item>
+
+    <ion-item class="item-line">
+      <ion-avatar item-left>
+        <img src="img/user/mike.png" alt="">
+      </ion-avatar>
+      <div>
+          <p style="font-size: 13px;">Ben Foster liked your post.</p>
+          <ion-icon name="ios-heart" style="color:#CB202D;font-size:18px"></ion-icon>
+          <span style="color:gray;font-size : 12px;position:relative;top:-4px;left:7px;"> 2 mins</span>
+      </div>
+      <ion-avatar item-right>
+        <img src="img/user/mike.png" alt="" style="border-radius: 0px;max-height: 4rem;max-width: 4rem;">
+      </ion-avatar>
+    </ion-item>
+
+    <ion-item class="item-line">
+      <ion-avatar item-left>
+        <img src="img/user/mike.png" alt="">
+      </ion-avatar>
+      <div>
+          <p style="font-size: 13px;">Ben Foster liked your post.</p>
+          <ion-icon name="ios-heart" style="color:#CB202D;font-size:18px"></ion-icon>
+          <span style="color:gray;font-size : 12px;position:relative;top:-4px;left:7px;"> 2 mins</span>
+      </div>
+      <ion-avatar item-right>
+        <img src="img/user/mike.png" alt="" style="border-radius: 0px;max-height: 4rem;max-width: 4rem;">
+      </ion-avatar>
+    </ion-item>
+    
+    <ion-item class="item-line">
+      <ion-avatar item-left>
+        <img src="img/user/mike.png" alt="">
+      </ion-avatar>
+      <div>
+          <p style="font-size: 13px;">Ben Foster commented on your post.</p>
+          <ion-icon name="ios-chatbubbles" style="color:#86CD82;font-size:18px"></ion-icon>
+          <span style="color:gray;font-size : 12px;position:relative;top:-4px;left:7px;"> 2 mins</span>
+      </div>
+      <ion-avatar item-right>
+        <img src="img/user/mike.png" alt="" style="border-radius: 0px;max-height: 4rem;max-width: 4rem;">
+      </ion-avatar>
+    </ion-item>
+
+    <ion-item class="item-line">
+      <ion-avatar item-left>
+        <img src="img/user/mike.png" alt="">
+      </ion-avatar>
+      <div>
+          <p style="font-size: 13px;">Ben Foster liked your post.</p>
+          <ion-icon name="ios-heart" style="color:#CB202D;font-size:18px"></ion-icon>
+          <span style="color:gray;font-size : 12px;position:relative;top:-4px;left:7px;"> 2 mins</span>
+      </div>
+      <ion-avatar item-right>
+        <img src="img/user/mike.png" alt="" style="border-radius: 0px;max-height: 4rem;max-width: 4rem;">
+      </ion-avatar>
+    </ion-item>
+
+    <ion-item class="item-line">
+      <ion-avatar item-left>
+        <img src="img/user/mike.png" alt="">
+      </ion-avatar>
+      <div>
+          <p style="font-size: 13px;">Ben Foster commented on your post.</p>
+          <ion-icon name="ios-chatbubbles" style="color:#86CD82;font-size:18px"></ion-icon>
+          <span style="color:gray;font-size : 12px;position:relative;top:-4px;left:7px;"> 2 mins</span>
+      </div>
+
+      <ion-avatar item-right>
+        <img src="img/user/mike.png" alt="" style="border-radius: 0px;max-height: 4rem;max-width: 4rem;">
+      </ion-avatar>
+    </ion-item>
+
+    <ion-item class="item-line">
+      <ion-avatar item-left>
+        <img src="img/user/mike.png" alt="">
+      </ion-avatar>
+      <div>
+          <p style="font-size: 13px;">Ben Foster liked your post.</p>
+          <ion-icon name="ios-heart" style="color:#CB202D;font-size:18px"></ion-icon>
+          <span style="color:gray;font-size : 12px;position:relative;top:-4px;left:7px;"> 2 mins</span>
+      </div>
+      <ion-avatar item-right>
+        <img src="img/user/mike.png" alt="" style="border-radius: 0px;max-height: 4rem;max-width: 4rem;">
+      </ion-avatar>
+    </ion-item>
+
+
   </ion-list>
 </ion-content>

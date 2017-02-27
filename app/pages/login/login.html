@@ -20,11 +20,11 @@
 
   <ion-list class="list-form" style="margin-top:30px">
     <ion-item class="margin-top" style="background:none;border-bottom:1px solid white;box-shadow:none;">
-      <ion-input class="username" style="color:white;border-bottom-color:white;box-shadow:none;" type="text" placeholder="{{pl_username}}"></ion-input>
+      <ion-input [(ngModel)]="email" class="email" style="color:white;border-bottom-color:white;box-shadow:none;" type="text" placeholder="{{pl_username}}"></ion-input>
     </ion-item>
 
     <ion-item class="margin-top" style="background:none;border-bottom:1px solid white;box-shadow:none;">
-      <ion-input style="color:white;border-bottom-color:white;box-shadow:none;" type="password" placeholder="{{pl_password}}"></ion-input>
+      <ion-input [(ngModel)]="password" style="color:white;border-bottom-color:white;box-shadow:none;" type="password" placeholder="{{pl_password}}"></ion-input>
     </ion-item>
 
   </ion-list>
@@ -35,6 +35,6 @@
 
   <button facebook block class="margin-top-20">{{facebook}}</button>
 
-  <div text-center class="margin-top-20 light" tappable (click)="forgotPwd()">{{forgotpassword}}</div>
+  <div text-center style="text-decoration: underline;" class="margin-top-20 light" tappable (click)="forgotPwd()">{{forgotpassword}}</div>
   <button style="background-color: transparent;color:white;border-color:white;border:1px solid white;" class="margin-top-20"  block tappable (click)="signUp()">{{button_register}}</button>
 </ion-content>

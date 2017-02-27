@@ -1,11 +1,14 @@
-import {Component} from '@angular/core';
-import {Platform,NavController, NavParams, Storage, LocalStorage} from 'ionic-angular';
+import {Component,Inject} from '@angular/core';
+import {App,LoadingController,Platform,NavController, NavParams, Storage, LocalStorage,AlertController} from 'ionic-angular';
 import {ForgotPasswordPage} from '../forgot-password/forgot-password';
 import {SignUpPage} from '../sign-up/sign-up';
 import {HomePage} from '../home/home';
+import {NewFeedPage} from '../new-feed/new-feed';
 import {MainTabsPage} from '../main-tabs/main-tabs';
-import {Http} from '@angular/http';
 import {NgClass} from '@angular/common';
+import {Http, Headers, RequestOptions} from '@angular/http';
+
+import {APP_CONFIG, AppConfig} from '../../config/app-config';
 
 /*
  Generated class for the LoginPage page.
@@ -17,6 +20,13 @@ import {NgClass} from '@angular/common';
   templateUrl: 'build/pages/login/login.html',
 })
 export class LoginPage {
+
+  private baseUrl: any;
+  private apiKey: any;
+
+  public email: string = "";
+  public password: string = "";
+  //
   facebook:any;
   pl_username:any;
   pl_password:any;
@@ -28,6 +38,8 @@ export class LoginPage {
   lb_or:any;
   title:any;
   button_register:any;
+  //result data when get from login success
+  user_data:any;
 
   ionViewLoaded(){
     this.lan = new Storage(LocalStorage);
@@ -58,11 +70,9 @@ export class LoginPage {
       }
     });
   }
-  constructor(private nav: NavController, private http: Http, private param: NavParams, platform: Platform) { 
-    
-  }
-  getValue(language) {
-    alert(language);
+  constructor(private app:App,public loadingCtrl: LoadingController,public alertCtrl: AlertController,private http: Http,@Inject(APP_CONFIG) config:AppConfig,private nav: NavController, private param: NavParams, platform: Platform) { 
+    this.baseUrl = config.baseUrl;
+    this.apiKey = config.apiKey;
   }
   // go to forgot password page
   forgotPwd() {
@@ -71,15 +81,70 @@ export class LoginPage {
     })
   }
 
-  // process login
-  login() {
-    // add your login code here
-    this.nav.push(MainTabsPage);
-  }
-
-  // go to sign up page
   signUp() {
-    // add our sign up code here
     this.nav.push(SignUpPage);
   }
+
+  login(){
+   // this.nav.push(MainTabsPage);
+    
+    if(!this.email || !this.password ) {
+      let alert = this.alertCtrl.create({
+            title: 'Error!',
+            subTitle: "Email Or Password can not be blank!",
+            buttons: ['OK']
+      });
+      alert.present();
+      return;
+    }
+
+     let loadingprocess = this.loadingCtrl.create({ content: ''});
+     loadingprocess.present();
+    this.user_data = new Storage(LocalStorage);
+          //request data
+    let body = JSON.stringify({
+      "request_data" : {
+        "email" : this.email,
+        "password" : this.password
+      }
+    });
+    let headers = new Headers();
+        headers.append('X-API-KEY', this.apiKey);
+        headers.append('Content-Type', 'application/json');
+    this.http.post(this.baseUrl+'/UserRestController/loginuser',body,{headers : headers})
+      .map(res => res.json())
+      .subscribe(data => {
+
+        this.user_data.set('user', data);
+        if(data.response_code == "200"){
+          this.user_data.set('user', JSON.stringify(data.response_data));
+          loadingprocess.dismiss();
+          this.nav.push(MainTabsPage);
+          
+        } else {
+          let alert = this.alertCtrl.create({
+            title: 'Error!',
+            subTitle: data.response_msg,
+            buttons: ['OK']
+          });
+ 
+          loadingprocess.dismiss().then(()=>{
+            alert.present();
+          });
+        }
+        
+      },err => {
+        let alert = this.alertCtrl.create({
+            title: 'Error!',
+            subTitle: JSON.stringify(err),
+            buttons: ['OK']
+          });
+
+          loadingprocess.dismiss().then(()=>{
+            alert.present();
+          });
+      }); 
+  }
+
+
 }

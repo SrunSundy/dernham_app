@@ -9,7 +9,7 @@
 	  <ion-title>Edit Profile</ion-title>
 		<ion-buttons end>
 		      <button>
-		        Done
+		        Save
 		      </button>
 	    </ion-buttons>
 	</ion-navbar>
@@ -35,28 +35,28 @@
 	<ion-row style="margin-top: 15px;">
 		<ion-col>
 			<ion-list>
-			  <ion-item>
+			  <ion-item class="item-line my-placeholder">
 			    <ion-icon name="md-person" item-left style="color: #CB202D;"></ion-icon>
 			      <ion-input style="color:black;border-bottom-color:white;box-shadow:none;" type="text" placeholder="Fullname"></ion-input>
 			  </ion-item>
-			  <ion-item>
+			  <ion-item class="item-line my-placeholder">
 			    <ion-icon name="md-lock" item-left style="color: #CB202D;"></ion-icon>
 			      <ion-input style="color:black;border-bottom-color:white;box-shadow:none;" type="text" placeholder="Password"></ion-input>
 			  </ion-item>
-			  <ion-item>
+			  <ion-item class="item-line my-placeholder">
 			    <ion-icon name="md-information-circle" item-left style="color: #CB202D;"></ion-icon>
 			      <ion-input style="color:black;border-bottom-color:white;box-shadow:none;" type="text" placeholder="Description"></ion-input>
-			  </ion-item>
-			  <ion-item-divider color="light">Private Information</ion-item-divider>
-			  <ion-item>
+			  </ion-item >
+			  
+			  <ion-item class="item-line my-placeholder">
 			    <ion-icon name="ios-mail" item-left style="color: #CB202D;"></ion-icon>
 			      <ion-input style="color:black;border-bottom-color:white;box-shadow:none;" type="email" placeholder="Email"></ion-input>
 			  </ion-item>
-			  <ion-item>
+			  <ion-item class="item-line my-placeholder">
 			    <ion-icon name="ios-phone-portrait" item-left style="color: #CB202D;"></ion-icon>
 			      <ion-input style="color:black;border-bottom-color:white;box-shadow:none;" type="number" placeholder="Email"></ion-input>
 			  </ion-item>
-			  <ion-item>
+			  <ion-item class="item-line my-placeholder">
 			    <ion-icon name="ios-transgender" item-left style="color: #CB202D;"></ion-icon>
 			      <ion-label>Gender</ion-label>
 			      <ion-select [(ngModel)]="Gender">

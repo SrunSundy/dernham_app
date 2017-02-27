@@ -67,7 +67,7 @@
 	  </ion-row>
 	</ion-grid>
 	<!-- body -->
-	<ion-row>
+	<ion-row style="background-color: white;">
 	    <ion-segment [(ngModel)]="type" primary>
 		        <ion-segment-button value="app">
 			        <ion-icon name="md-apps"></ion-icon>
@@ -79,7 +79,7 @@
 	</ion-row>
 	  <ion-row style="margin-top:3px;">
 	  	<div [ngSwitch]="type">
-	  		<ion-list *ngSwitchCase="'app'" class="animated slideInLeft">
+	  		<ion-list *ngSwitchCase="'app'" class="animated slideInLeft" style="background-color: white;">
 	  			<div style="width: 100%;height:auto;margin-top: 1px;">
 	                <a style="display: block; width:32.8%;float:left;margin-right:0.8%;">
 	                  <img src="https://ig-s-b-a.akamaihd.net/hphotos-ak-xat1/t51.2885-15/e35/16464318_1795525084106041_8416478261827076096_n.jpg?ig_cache_key=MTQ0OTg4NTUwOTYwNTE4MzQ3NQ%3D%3D.2" style="width:100%;height:auto;">
@@ -126,43 +126,92 @@
               </div>
 	  		</ion-list>
 	  		<!-- list -->
-	  		<ion-list *ngSwitchCase="'list'" class="animated slideInRight">
+	  		<ion-list *ngSwitchCase="'list'" class="animated slideInRight common-bg">
 
-	  <div  style="margin-top:4px;margin-bottom:8px;"><!-- open places div -->
-        <ion-row style="background:white;">
-              <ion-col width-100 style="height:auto;">
-                <ion-item style="height:0px;margin-top:-4px;padding-left:10px;">
-                  <ion-avatar item-left>
-                    <img tappable  src="https://ig-s-a-a.akamaihd.net/hphotos-ak-xat1/t51.2885-19/s320x320/15875687_1448373268536848_8872773654618832896_n.jpg">
-                  </ion-avatar>
-                  <div tappable   style="font-size:12px;font-weight:bold;color:black;float:left;" >panhchaneath_u</div>
-                  <ion-icon  (tap)="moreOptions()" name="ios-more" item-right style="color:#566774;font-size:30px;margin-right:-7px;padding: 5px">
-                  </ion-icon>
-                </ion-item>
-              </ion-col>
-        </ion-row>
+	  			<ion-row style="margin-bottom: 8px;">
+				    <div><!-- open places div -->
+				        <ion-row style="background:white;">
+				              <ion-col width-100 style="height:auto;">
+				                <ion-item class="post_header_wrapper" style="height:0px;padding-left:10px;">
+				                  <ion-avatar item-left>
+				                    <img tappable  src="https://ig-s-a-a.akamaihd.net/hphotos-ak-xat1/t51.2885-19/s320x320/15875687_1448373268536848_8872773654618832896_n.jpg">
+				                  </ion-avatar>
 
-        <ion-row style="background: white !important">
-            <ion-col  tappable (click)="placesDetail(data)" width-100 style="padding:0;">
-              <img class="animated fadeIn"  src="https://ig-s-b-a.akamaihd.net/hphotos-ak-xat1/t51.2885-15/e35/16464318_1795525084106041_8416478261827076096_n.jpg?ig_cache_key=MTQ0OTg4NTUwOTYwNTE4MzQ3NQ%3D%3D.2" style="width:100%;object-fit: cover;">
-              <ion-item style="margin-top:-9px;border-bottom: 1px solid #e4e0e0;">
-                <ion-icon name="ios-heart" item-left style="color:#cb202d;font-size:25px"></ion-icon>
-                <ion-icon name="ios-chatbubbles-outline" item-left style="color:#566774;font-size:25px"></ion-icon>
-                <ion-icon name="ios-share-outline" item-left style="color:#566774;font-size:25px"></ion-icon>
-              </ion-item>
-            </ion-col>
-        </ion-row>
+				                  <div tappable style="font-size:12px;font-weight:bold;color:black;float:left;">
+				                  	<span style="margin-right: 3px;">panhchaneath_u</span> 
+				                  		<ion-icon style="margin-right: 5px;color: #cb202d;font-size: 16px;" name="ios-pin"></ion-icon>
+				                  		<span>at {{ subText("ABC storekdkdkdkdkdkdkdkdkdkdkdkdkdk", 15) }}</span>
+				                  <p style="line-height: 22px;font-size: 10px;">30 mins</p>
+				                  </div>
 
-        <ion-row style="padding-left: 14px;">
-        	<ion-col style="font-size: 12px;font-weight: bold;">
-        		<span><ion-icon name="ios-heart" item-left style="color:black;font-size:13px;width: 0;"></ion-icon><span>47 likes</span></span><br>
-        		<span><span>panhchaneath_u</span><span style="font-weight: normal;margin-left: 5px;">hot caramellatte from sonitakhoun because she feels good today</span></span>
-        	</ion-col>
-        </ion-row>
+				                  <ion-icon  (tap)="moreOptions()" name="ios-more" item-right style="color:#566774;font-size:30px;margin-right:-7px;padding: 5px">
+				                  </ion-icon>
+				                </ion-item>
+				              </ion-col>
+				        </ion-row>
 
-      </div><!-- close places div -->
+				        <ion-row style="background: white !important">
+				            <ion-col  tappable (click)="placesDetail(data)" width-100 style="padding:0;">
+				              <img class="animated fadeIn"  src="http://www.incrediblesnaps.com/wp-content/uploads/2012/01/delicious-and-yummy-food-photos-11.jpg" style="width:100%;object-fit: cover;">
+				              <ion-item class="post_action_wrapper" style="border-bottom: 1px solid #e4e0e0;">
+				                <ion-icon name="ios-heart" item-left style="color:#cb202d;font-size:25px"></ion-icon>
+				                <ion-icon name="ios-chatbubbles-outline" item-left style="color:#566774;font-size:25px"></ion-icon>
+				                <ion-icon name="ios-paper-plane-outline" item-left style="color:#566774;font-size:25px"></ion-icon>
+				                <p item-right style="font-size: 11px;margin-right: 4px;">1230 views</p>
+				              </ion-item>
+				            </ion-col>
+				        </ion-row>
 
+				        <ion-row style="padding-left: 7px;background: white">
+				          <ion-col style="font-size: 12px;font-weight: bold;padding-bottom: 10px">
+				            <span><ion-icon name="ios-heart" item-left style="margin-top: 5px;margin-right:17px;color:black;font-size:13px;width: 0;"></ion-icon><span>47 likes</span></span>
+				            <span style="margin-right: 7px;float: right;"><span style="margin-top:4px;">10 comments</span></span><br>
+				            <span><span>panhchaneath_u</span><span style="font-weight: normal;m">hot caramellatte from sonitakhoun because she feels good today</span></span>
+				          </ion-col>
+				        </ion-row>
 
+				      </div><!-- close places div -->
+				  </ion-row>
+
+				  <ion-row style="margin-bottom: 8px;">
+				    <div><!-- open places div -->
+				        <ion-row style="background:white;">
+				              <ion-col width-100 style="height:auto;">
+				                <ion-item class="post_header_wrapper" style="height:0px;padding-left:10px;">
+				                  <ion-avatar item-left>
+				                    <img tappable  src="https://ig-s-a-a.akamaihd.net/hphotos-ak-xat1/t51.2885-19/s320x320/15875687_1448373268536848_8872773654618832896_n.jpg">
+				                  </ion-avatar>
+				                  <div tappable style="font-size:12px;font-weight:bold;color:black;float:left;"><span style="margin-right: 3px;">panhchaneath_u</span> <ion-icon style="margin-right: 5px;color: #cb202d;font-size: 16px;" name="ios-pin"></ion-icon><span>at {{ subText("ABC storekdkdkdkdkdkdkdkdkdkdkdkdkdk", 15) }}</span>
+				                  <p style="line-height: 22px;font-size: 10px;">30 mins</p>
+				                  </div>
+				                  <ion-icon  (tap)="moreOptions()" name="ios-more" item-right style="color:#566774;font-size:30px;margin-right:-7px;padding: 5px">
+				                  </ion-icon>
+				                </ion-item>
+				              </ion-col>
+				        </ion-row>
+
+				        <ion-row style="background: white !important">
+				            <ion-col  tappable (click)="placesDetail(data)" width-100 style="padding:0;">
+				              <img class="animated fadeIn"  src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSqP3VOJZ1TQpvUhD3VifAccExQcD0Zlr_b2hedfIfi4-81EwUirg" style="width:100%;object-fit: cover;">
+				              <ion-item class="post_action_wrapper" style="border-bottom: 1px solid #e4e0e0;">
+				                <ion-icon name="ios-heart" item-left style="color:#cb202d;font-size:25px"></ion-icon>
+				                <ion-icon name="ios-chatbubbles-outline" item-left style="color:#566774;font-size:25px"></ion-icon>
+				                <ion-icon name="ios-paper-plane-outline" item-left style="color:#566774;font-size:25px"></ion-icon>
+				                <p item-right style="font-size: 11px;margin-right: 4px;">1230 views</p>
+				              </ion-item>
+				            </ion-col>
+				        </ion-row>
+
+				        <ion-row style="padding-left: 7px;background: white">
+				          <ion-col style="font-size: 12px;font-weight: bold;padding-bottom: 10px">
+				            <span><ion-icon name="ios-heart" item-left style="margin-top: 5px;margin-right:17px;color:black;font-size:13px;width: 0;"></ion-icon><span>47 likes</span></span>
+				            <span style="margin-right: 7px;float: right;"><span style="margin-top:4px;">10 comments</span></span><br>
+				            <span><span>panhchaneath_u</span><span style="font-weight: normal;m">hot caramellatte from sonitakhoun because she feels good today</span></span>
+				          </ion-col>
+				        </ion-row>
+
+				      </div><!-- close places div -->
+				  </ion-row>
 
 	  		</ion-list>
 	  	</div>

@@ -21,4 +21,13 @@ type: string = "app";
   goToSetting(){
   	this.app.getRootNav().push(AccountPage);
   }
+
+  subText(str, cutvalue):string{
+    if(str.length > 25){
+      return str.substring(0,cutvalue)+" ...";  
+    }else{
+      return str;
+    }    
+  }
+  
 }

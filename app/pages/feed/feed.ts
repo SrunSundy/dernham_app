@@ -11,6 +11,7 @@ import {PlaceDetailPage} from '../place-detail/place-detail';
  */
 @Component({
   templateUrl: 'build/pages/feed/feed.html',
+  styleUrls: ['css/edituser.css']
 })
 export class FeedPage {
   private reviews: any;

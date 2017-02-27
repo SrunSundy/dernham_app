@@ -39,6 +39,7 @@ import {SearchDetailPage} from './pages/search-detail/search-detail';
 import {ShopDetailPage} from './pages/shop-detail/shop-detail';
 import {UserAccountPage} from './pages/user-account/user-account';
 import {EditUserAccountPage} from './pages/edit-user-account/edit-user-account';
+import {NewFeedPage} from './pages/new-feed/new-feed';
 import { APP_CONFIG, SYS_CONFIG, AppConfig } from './config/app-config';
 
 @Component({
@@ -57,6 +58,7 @@ export class MyApp {
             n = 0;
             this.rootPage = IntroPage;
         } else {
+          //this.rootPage = NewFeedPage;
           this.rootPage = LoginPage;
           //this.rootPage = UserAccountPage;
         }

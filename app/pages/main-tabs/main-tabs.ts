@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {HomePage} from '../home/home';
-import {CollectionsPage} from '../collections/collections';
 import {FeedPage}from '../feed/feed';
+import {NewFeedPage}from '../new-feed/new-feed';
 import {UserAccountPage} from '../user-account/user-account';
 
 /*
@@ -15,10 +15,11 @@ import {UserAccountPage} from '../user-account/user-account';
   templateUrl: 'build/pages/main-tabs/main-tabs.html',
 })
 export class MainTabsPage {
-  private tabHome = HomePage;
-  private tabCollections = CollectionsPage;
+  private tabHome = NewFeedPage;
+  private tabCategory = HomePage;
   private tabFeed = FeedPage;
   private tabAccount = UserAccountPage;
 
   constructor(private nav: NavController) {}
+
 }

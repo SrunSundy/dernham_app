@@ -9,6 +9,7 @@ import {NavController} from 'ionic-angular';
  */
 @Component({
   templateUrl: 'build/pages/edit-user-account/edit-user-account.html',
+  styleUrls : ["css/edituser.css"] 
 })
 export class EditUserAccountPage {
 type: string = "app";
